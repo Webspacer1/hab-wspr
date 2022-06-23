@@ -18,8 +18,6 @@ config.read('balloon.ini')
 push_habhub = config['main']['push_habhub']
 push_sondehub = config['main']['push_sondehub']
 push_aprs = config['main']['push_aprs']
-software_name = config['main']['software_name']
-software_version = config['main']['software_version']
 balloons = config['main']['balloons']
 filter_only_spots_newer = config['main']['filter_only_spots_newer']
 
@@ -248,7 +246,7 @@ while 1==1:
     if len(spots) > 1:
         try:
             print("pre-tele:",len(spots))
-            spots = process_telemetry(spots, balloons, habhub_callsign, push_habhub, push_sondehub, push_aprs, software_name, software_version)
+            spots = process_telemetry(spots, balloons, habhub_callsign, push_habhub, push_sondehub, push_aprs)
             # print("pro-tele:",len(spots))
         except Exception as e:
             print("Process Telemetry Error: %s" % e)
