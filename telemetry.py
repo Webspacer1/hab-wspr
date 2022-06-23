@@ -504,7 +504,7 @@ def timetrim(spots, m):
 #
 # Main function - filter, process and upload of telemetry
 #
-def process_telemetry(spots, balloons, habhub_callsign, push_habhub, push_sondehub, push_aprs, software_name, software_version):
+def process_telemetry(spots, balloons, habhub_callsign, push_habhub, push_sondehub, push_aprs):
     # Filter out telemetry-packets
     spots_tele = []
 
@@ -734,8 +734,8 @@ def process_telemetry(spots, balloons, habhub_callsign, push_habhub, push_sondeh
                                     if comment != None:
                                         telestr_sondehub = [
                                           {
-                                            "software_name": "%s" % (software_name),
-                                            "software_version": "%s" % (software_version),
+                                            "software_name": "%s" % ("DG4NOB_WSPR_UPLOADER"),
+                                            "software_version": "%s" % ("0.1"),
                                             "uploader_callsign": "%s" % (habhub_callsign),
 #                                            "time_received": "%s" % (date_created_sondehub),
                                             "time_received": "%s" % (date_now_sondehub),
@@ -758,8 +758,8 @@ def process_telemetry(spots, balloons, habhub_callsign, push_habhub, push_sondeh
                                     else:
                                         telestr_sondehub = [
                                           {
-                                            "software_name": "%s" % (software_name),
-                                            "software_version": "%s" % (software_version),
+                                            "software_name": "%s" % ("DG4NOB_WSPR_UPLOADER"),
+                                            "software_version": "%s" % ("0.1"),
                                             "uploader_callsign": "%s" % (habhub_callsign),
 #                                            "time_received": "%s" % (date_created_sondehub),
                                             "time_received": "%s" % (date_now_sondehub),
